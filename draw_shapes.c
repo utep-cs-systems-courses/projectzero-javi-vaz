@@ -26,3 +26,12 @@ void print_triangle(int leftCol, int size)
   }
 }
 
+/* Prints an arrow whose tip is done using the print triangle and the body
+is done using the print square twice. */
+void print_arrow(int leftCol, int size)
+{
+  print_triangle(leftCol,size);
+  print_square(leftCol+(leftCol/2),size);
+  print_square(leftCol+(leftCol/2),size);
+}
+  
