@@ -26,12 +26,16 @@ void print_triangle(int leftCol, int size)
   }
 }
 
-/* Prints an arrow whose tip is done using the print triangle and the body
-is done using the print square twice. */
-void print_arrow(int leftCol, int size)
+/* Prints an arrow based on the bitmap provided. */
+void print_arrow()
 {
-  print_triangle(leftCol,size);
-  print_square(leftCol+(leftCol/2),size);
-  print_square(leftCol+(leftCol/2),size);
+  for (char row = 0; row < 5; row++){ 
+    unsigned short rowBits = arrow_bitmap[0][row];
+    for (char col = 0; col < 7; col++){
+      unsigned short colMask = 1 << (6-col); /* mask to select bit associated with bit */
+      putchar( (rowBits & colMask) ? '*' : ' ');
+    }
+    putchar('\n');
+  }
 }
   

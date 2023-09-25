@@ -1,0 +1,4 @@
+const unsigned char arrow_bitmap[1][5] = {
+
+  { 0x04, 0x7e, 0x7f, 0x7e, 0x04 } // Arrow
+};
